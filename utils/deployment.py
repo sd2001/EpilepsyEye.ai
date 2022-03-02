@@ -7,6 +7,7 @@ import io
 import tempfile
 import time
 from mhyt import yt_download
+import base64
 
 import youtube_dl
 
@@ -24,7 +25,7 @@ def video_upload():
 
         opt = st.selectbox("How do you want to upload the video?\n", ('Please Select', 'Upload video via link', 'Upload video from device'))
 
-        temporary_location = "utils/test/test.mp4"
+        temporary_location = "misc/test/test.mp4"
 
         if opt == 'Upload video from device':
             
@@ -53,3 +54,19 @@ def video_upload():
     except:
 
          st.info("Please upload your video in '.mp4' format")
+
+def set_bg_local(main_bg):
+
+    main_bg_ext = "jpg"
+    
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()});
+            background-size: cover
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
