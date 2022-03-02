@@ -2,6 +2,7 @@ import streamlit as st
 from utils.deployment import *
 import cv2
 
+set_bg_local("misc/images/bg.jpg")
 opt = st.sidebar.selectbox("",("Home", "Transform"))
 
 if opt=="Home":
