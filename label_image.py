@@ -1,10 +1,19 @@
 import sys
 import tensorflow.compat.v1 as tf
+import cv2
+import os
 tf.disable_v2_behavior()
 image_path = "test_images/th_test.png"
 
-# Read in the image_data
-image_data = tf.io.gfile.GFile(image_path, 'rb').read()
+## Converting Image read by OpenCV to bytes
+cv2_image = im = cv2.imread(image_path)
+extension = os.path. splitext(image_path)[-1]
+is_success, im_buf_arr = cv2.imencode(extension, cv2_image)
+byte_im = im_buf_arr.tobytes()
+
+## Read in the image_data(Now required after the above conversion)
+# image_data = tf.io.gfile.GFile(image_path, 'rb').read()
+# print(type(image_data))
 
 # Loads label file, strips off carriage return
 label_lines = [line.rstrip() for line 
@@ -21,7 +30,7 @@ with tf.Session() as sess:
     softmax_tensor = sess.graph.get_tensor_by_name('final_result:0')
     
     predictions = sess.run(softmax_tensor, \
-             {'DecodeJpeg/contents:0': image_data})
+             {'DecodeJpeg/contents:0': byte_im})
     
     # Sort to show labels of first prediction in order of confidence
     top_k = predictions[0].argsort()[-len(predictions[0]):][::-1]
