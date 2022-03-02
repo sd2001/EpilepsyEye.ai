@@ -2,6 +2,7 @@ import sys
 import tensorflow.compat.v1 as tf
 import cv2
 import os
+
 tf.disable_v2_behavior()
 image_path = "test_images/th_test.png"
 
