@@ -1,9 +1,14 @@
+from __future__ import unicode_literals
+#from pytube import YouTube
 import streamlit as st
 import cv2
 import urllib
 import io
 import tempfile
 import time
+from mhyt import yt_download
+
+import youtube_dl
 
 def video_upload():
 
@@ -15,39 +20,36 @@ def video_upload():
     '''
     st.markdown(html_temp, unsafe_allow_html=True)
 
-    #try:
+    try:
 
-    opt = st.selectbox("How do you want to upload the image?\n", ('Please Select', 'Upload image via link', 'Upload image from device'))
-    
-    if opt == 'Upload image from device':
-        
-        uploaded_file = st.file_uploader("Choose a video in .mp4 format", type=["mp4"])
-        temporary_location = False
+        opt = st.selectbox("How do you want to upload the video?\n", ('Please Select', 'Upload video via link', 'Upload video from device'))
 
-        if uploaded_file is not None:
-            g = io.BytesIO(uploaded_file.read())  ## BytesIO Object
-            temporary_location = "utils/test/test.mp4"
+        temporary_location = "utils/test/test.mp4"
 
-            with open(temporary_location, 'wb') as out:  ## Open temporary file as bytes
-                out.write(g.read())  ## Read bytes into file
+        if opt == 'Upload video from device':
+            
+            uploaded_file = st.file_uploader("Choose a video in .mp4 format", type=["mp4"])
+            #temporary_location = False
 
-            # close file
-            out.close()
+            if uploaded_file is not None:
+                g = io.BytesIO(uploaded_file.read())  ## BytesIO Object
+                
 
-    # elif opt == 'Upload image via link':
-        
-    #     try:
-    #         img = st.text_input('Enter the Image Address')
-    #         input_video = cv2.VideoCapture(urllib.request.urlopen(img))
-        
-    #     except:
-    #         if st.button('Submit'):
-    #             show = st.error("Please Enter a valid Image Address!")
-    #             time.sleep(4)
-    #             show.empty()
+                with open(temporary_location, 'wb') as out:  ## Open temporary file as bytes
+                    out.write(g.read())  ## Read bytes into file
 
-    #return input_video
+                # close file
+                out.close()
 
-    #except:
+        elif opt == 'Upload video via link':
+            
+            try:
+                link = st.text_input('Enter the youtube URL')
+                yt_download(link,temporary_location)
 
-    #    st.info("Please upload your image in '.jpg', '.jpeg' or '.png'")
+            except:
+                st.error("")
+
+    except:
+
+         st.info("Please upload your video in '.mp4' format")

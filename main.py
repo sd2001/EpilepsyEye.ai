@@ -9,8 +9,7 @@ if opt=="Home":
 
 else:
     video_upload()
-    path = "utils/test/test.mp4"
-    st.video(path)
+    
 
 
 
