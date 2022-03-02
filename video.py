@@ -14,6 +14,11 @@ with tf.io.gfile.GFile("retrained_graph.pb", 'rb') as f:
     graph_def = tf.compat.v1.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')
+    
+max_strobe = 0
+min_strobe = 100
+time_process = {"0"}
+strobe_threshold = 90
 
 with tf.Session() as sess:
     # Feed the image_data as input to the graph and get first prediction
@@ -34,8 +39,22 @@ with tf.Session() as sess:
                 
                 for node_id in top_k:
                     human_string = label_lines[node_id]
-                    score = predictions[0][node_id]
-                    print('%s (score = %.5f)' % (human_string, score))
+                    if human_string == "strobe":
+                        score = predictions[0][node_id]
+                        if score > max_strobe:
+                            max_strobe = score
+                        if score < min_strobe:
+                            min_strobe = score
+                            
+                        if score < 80:
+                            cv2.imshow('Frame', frame)
+                        else:
+                            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) 
+                            cv2.imshow('Frame', frame)
+                            
+                        print('%s (score = %.5f)' % (human_string, score))
 
             count+=1
             print("time stamp current frame:",count/fps)
+            
+print(max_strobe, min_strobe)
