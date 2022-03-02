@@ -25,7 +25,7 @@ with tf.Session() as sess:
             label_lines = [line.rstrip() for line 
                     in tf.io.gfile.GFile("retrained_labels.txt")]
 
-            if count%10 == 0:  # processes on frames after every 0.4 seconds
+            if count%(0.4 * fps) == 0:  # processes on frames after every 0.4 seconds
                 predictions = sess.run(softmax_tensor, \
                         {'DecodeJpeg/contents:0': byte_im})
                 
