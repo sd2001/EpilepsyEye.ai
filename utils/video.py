@@ -5,15 +5,10 @@ tf.disable_v2_behavior()
 def run():
     vidcap = cv2.VideoCapture('misc/test/test.mp4')
 
-    #fps = vidcap.get(cv2.CAP_PROP_FPS)
-    #print(fps)
-    #success,image = vidcap.read()
-
     count = 0
     success = True
-
-    #epilepsy = {}
-
+    
+    # Define the location for saving the preprocessed video
     new_vid = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter('misc/test/new video.avi', new_vid, 20.0, (640,480))
 
@@ -28,13 +23,12 @@ def run():
 
         while success:
             success,frame = vidcap.read()
-
-            #if success:
             byte_im = cv2.imencode('.jpg', frame)[1].tobytes()
             label_lines = [line.rstrip() for line 
                     in tf.io.gfile.GFile("./misc/retrained_labels.txt")]
 
-            if count%5 == 0:  # processes on frames after every 0.2 seconds
+            # Processes on frames after every 0.2 seconds
+            if count%5 == 0:
                 predictions = sess.run(softmax_tensor, \
                         {'DecodeJpeg/contents:0': byte_im})
                 
@@ -49,27 +43,23 @@ def run():
                 
             if score>0.85:
 
-                # converting to gray-scale
+                # Convert the epileptic frames to gray-scale
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-                #epilepsy[count] = score
-
 
             count+=1
         
-            # displaying the video
+            # Display the video
             cv2.imshow("Live", frame)
 
-            #saving as a new video
+            # Save as a new video
             out.write(frame)
         
-            # exiting the loop
+            # Exit the loop
             key = cv2.waitKey(1)
             if key == ord("q"):
                 break
             
-    # closing the window
+    # Close all windows
     cv2.destroyAllWindows()
     out.release()
     vidcap.release()
-        
-    #print(epilepsy)
