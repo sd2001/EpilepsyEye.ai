@@ -221,3 +221,4 @@ Credits
 * [Google Code Labs - TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets)
 * [Build a TensorFlow Image Classifier in 5 Min](https://youtu.be/QfNvhPx5Px8)
 * [Smashing Security Podcast coverage of tweet incident](http://smashingsecurity.libsyn.com/013-assault-with-a-deadly-tweet)
+* [Github Reference Repo](https://github.com/asasidh/Seizure-Detection-Tensor-Flow)
