@@ -115,18 +115,62 @@ TensorFlow is a an open source library for building machine learning models. In 
 
   ```
   
-  <div align="center"> 
+ <div align="center"> 
   <img src="https://img.shields.io/badge/Contributors-black?logo=Github&style=for-the-badge" height="40"/> 
 </div>
   <br>
 
-    
 <div align="center"> 
   <table>
 <tr align="center">
+ <td>
+
+Indira Dutta
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/indiradutta"  height="120" alt="Indira">
+</p>
+<p align="center">
+<a href = "https://github.com/indiradutta"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/indira-dutta-775445197/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+ <strong>ML Developer<strong>
+</td>
+<td>
+  
+Sneha Patnaik
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/patnaik-s"  height="120" alt="Sneha">
+</p>
+<p align="center">
+<a href = "https://github.com/patnaik-s"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/sneha-patnaik-23863a228/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+  <strong>ML Developer<strong>
+</td>
+ <td>
+    
+Srijarko Roy
+
+<p align="center">
+<img src = "https://avatars.githubusercontent.com/srijarkoroy"  height="120" alt="Srijarko">
+</p>
+<p align="center">
+<a href = "https://github.com/srijarkoroy"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/srijarko-roy-9193751b0/">
+<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
+</a>
+</p>
+    <strong>ML Developer<strong>
+</td>
 
 <td>
-
+  
 Swarnabha Das
 
 <p align="center">
@@ -138,10 +182,18 @@ Swarnabha Das
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
+  <strong>ML | Backend<strong>
 </td>
-</table>
+  
+  </table>
 </tr>
 </div>
+  <br>
+  
+  
+ <!-- END -->
+
+
 
 
   
@@ -150,23 +202,6 @@ Swarnabha Das
   <img src="https://img.shields.io/badge/Please%20star%20if%20you%20like%20it-lightcoral?logo=Starship&style=for-the-badge" width="300" height="35"/>
  </div>
 
-
-
-Technical Details
---
-TensorFlow is a an open source library for building machine learning models. In our case we will use an existing model and retrain it to detect seizure inducing images.This is called transfer learning. The popular Inception v3 model trained on [ImageNet](http://image-net.org/) is used as the base model.
-
-1. TensorFlow is installed on docker. the image used is gcr.io/tensorflow/tensorflow:latest-devel
-2. Use [Fatkun Batch Image downloader](https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf?hl=en) for chrome to search and download images of flashing strobe lighting.
-3. Follow the instructions in [Google Code Labs](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets) to retrain your model.
-  * With 500 Iterations, Final test accuracy was 86.8%
-  * With 4000 Iterations, Final test accuracy improved to 91.5% and that is the model uploaded here as [retrained_graph.pb](https://github.com/asasidh/Seizure-Detection-Tensor-Flow/blob/master/retrained_graph.pb)
-4. Download test images to validate the trained model. Since I used google images to batch download training images, I decided to use bing image search for the test images. Couple of test images are uploaded under the `test_images` folder.
-
-
-Notes
-----
-The animated gif needs to be converted to a jpg image for the  model to work on it. This can be easily accomplished in the command line using [ImageMagick](https://www.imagemagick.org/script/index.php).
 
 
 Credits
