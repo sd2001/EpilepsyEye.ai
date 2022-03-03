@@ -46,7 +46,10 @@ It is important for sites with user generated content to acknowledge this and ta
  <br>
 
 <div align="center"> 
-  <img src="https://img.shields.io/badge/Product%20Images-mediumseagreen?logo=Pinterest&style=for-the-badge" height="40"/> 
+  <img src="https://img.shields.io/badge/Product%20Images-mediumseagreen?logo=Pinterest&style=for-the-badge" height="40"/><br><br>
+  <img src="media/home.png" /><br><br>
+  <img src="media/video.png" /><br>
+
 </div>
   <br>
  
