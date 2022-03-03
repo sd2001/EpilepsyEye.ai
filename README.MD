@@ -13,6 +13,8 @@
 
 ## Detect seizure inducing videos using Tensorflow - Background
 
+<br><img src="media/effects.png" /><br>
+
 Earlier in March 2017, there was a lot of [news coverage](https://www.nytimes.com/2017/03/17/technology/social-media-attack-that-set-off-a-seizure-leads-to-an-arrest.html) about an incident in the social media. Journalist Kurt Eichenwald received a tweet that stated `"YOU DESERVE A SEIZURE FOR YOUR POSTS"`. The Journalist who suffered from epilepsy, got a seizure by looking at the image.
 
 This incident has shown how social media could potentially be used as a terror weapon to inflict immediate physical pain and suffering to unsuspecting victims. Email, websites with user generated content are equally vulnerable to such attacks. In  2008 a hacker [defaced the website of the Epilepsy Foundation](http://www.cbsnews.com/news/epilepsy-site-hacked-with-seizure-images/) and inserted flashing images which caused multiple health incidents to unsuspecting victims.
