@@ -8,12 +8,10 @@
    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg" />
 	<br>
 </div>
-	
-
-
-## Brief Background on Epilepsy and its Effects
-
-<br><img src="media/effects.png" /><br>
+<br>
+<div align='center'>
+<img src="https://img.shields.io/badge/Brief%20Background%20on%20Epilepsy%20and%20its%20Effects-rebeccapurple?style=for-the-badge" height="45"/>
+</div>
 
 <br><img src="media/effects.png" /><br>
 
@@ -26,7 +24,7 @@ It is important for sites with user generated content to acknowledge this and ta
 <div align="center">
   </p>
   <p>
-  <img src="https://img.shields.io/badge/Vision%20%7C%20No one deserves a seizure from social media.-purple?logo=Product%20Hunt&style=for-the-badge" height="40"/>
+  <img src="https://img.shields.io/badge/Vision%20%7C%20No one deserves a seizure from social media.-mistyrose?logo=Product%20Hunt&style=for-the-badge" height="40"/>
   <br><br>
   <img src="media/product_vision.png" />
   </p>
