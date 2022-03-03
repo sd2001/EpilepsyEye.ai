@@ -2,7 +2,7 @@
 
 <div align="center"> 
   <p align='center'> 
-   <img src="https://img.shields.io/badge/Name%20-%20Epilepsy_Eye.ai-darkgreen?style=for-the-badge"/>
+   <img src="https://img.shields.io/badge/Name%20-%20Epilepsy_Eye.ai-green?style=for-the-badge"/>
    <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
    <img src="https://img.shields.io/badge/By-Team_Return_False-blue?style=for-the-badge" /><br>
    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg" />
@@ -12,7 +12,6 @@
 
 
 ## Detect seizure inducing videos using Tensorflow - Background
-<hr>
 
 Earlier in March 2017, there was a lot of [news coverage](https://www.nytimes.com/2017/03/17/technology/social-media-attack-that-set-off-a-seizure-leads-to-an-arrest.html) about an incident in the social media. Journalist Kurt Eichenwald received a tweet that stated `"YOU DESERVE A SEIZURE FOR YOUR POSTS"`. The Journalist who suffered from epilepsy, got a seizure by looking at the image.
 
@@ -23,7 +22,7 @@ It is important for sites with user generated content to acknowledge this and ta
 <div align="center">
   </p>
   <p>
-  <img src="https://img.shields.io/badge/Vision%20%7C%20No one deserves a seizure from social media.-lavenderblush?logo=Product%20Hunt&style=for-the-badge" height="35"/>
+  <img src="https://img.shields.io/badge/Vision%20%7C%20No one deserves a seizure from social media.-purple?logo=Product%20Hunt&style=for-the-badge" height="40"/>
   <br><br>
   <img src="media/product_vision.png" />
   </p>
@@ -114,7 +113,7 @@ TensorFlow is a an open source library for building machine learning models. In 
 4. Download test images to validate the trained model. Since I used google images to batch download training images, I decided to use bing image search for the test images. Couple of test images are uploaded under the `test_images` folder.
 
   ```
-  
+ <br>
  <div align="center"> 
   <img src="https://img.shields.io/badge/Contributors-black?logo=Github&style=for-the-badge" height="40"/> 
 </div>
@@ -187,6 +186,14 @@ Swarnabha Das
   
   </table>
 </tr>
+</div>
+  <br>
+	
+<div align="center"> 
+  <img src="https://img.shields.io/badge/To%20Contribute-black?logo=Github&style=for-the-badge" height="40"/> 
+<p><br>
+Contributions are always welcome! Please check out this <a href="https://github.com/sd2001/EpilepsyEye.ai/blob/main/contribute.md">doc here </a>for Contribution Guidelines.
+</p>
 </div>
   <br>
   
