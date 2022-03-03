@@ -2,7 +2,7 @@ import cv2
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-vidcap = cv2.VideoCapture('test_video/videoplayback.mp4')
+vidcap = cv2.VideoCapture('misc/test/test.mp4')
 
 #fps = vidcap.get(cv2.CAP_PROP_FPS)
 #print(fps)
@@ -14,9 +14,9 @@ success = True
 #epilepsy = {}
 
 new_vid = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('test_video/new video.avi', new_vid, 20.0, (640,480))
+out = cv2.VideoWriter('misc/test/new video.avi', new_vid, 20.0, (640,480))
 
-with tf.io.gfile.GFile("retrained_graph.pb", 'rb') as f:
+with tf.io.gfile.GFile("./weights/retrained_graph.pb", 'rb') as f:
     graph_def = tf.compat.v1.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')
@@ -31,7 +31,7 @@ with tf.Session() as sess:
         #if success:
         byte_im = cv2.imencode('.jpg', frame)[1].tobytes()
         label_lines = [line.rstrip() for line 
-                in tf.io.gfile.GFile("retrained_labels.txt")]
+                in tf.io.gfile.GFile("./misc/retrained_labels.txt")]
 
         if count%5 == 0:  # processes on frames after every 0.2 seconds
             predictions = sess.run(softmax_tensor, \
