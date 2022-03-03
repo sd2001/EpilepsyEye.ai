@@ -11,7 +11,7 @@
 	
 
 
-## Detect seizure inducing videos using Tensorflow - Background on Epilepsy
+## Brief Background on Epilepsy and its Effects
 
 <br><img src="media/effects.png" /><br>
 
