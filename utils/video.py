@@ -29,43 +29,43 @@ def run():
         while success:
             success,frame = vidcap.read()
 
-            #if success:
-            byte_im = cv2.imencode('.jpg', frame)[1].tobytes()
-            label_lines = [line.rstrip() for line 
-                    in tf.io.gfile.GFile("./misc/retrained_labels.txt")]
+            if success:
+                byte_im = cv2.imencode('.jpg', frame)[1].tobytes()
+                label_lines = [line.rstrip() for line 
+                        in tf.io.gfile.GFile("./misc/retrained_labels.txt")]
 
-            if count%5 == 0:  # processes on frames after every 0.2 seconds
-                predictions = sess.run(softmax_tensor, \
-                        {'DecodeJpeg/contents:0': byte_im})
-                
-                # Sort to show labels of first prediction in order of confidence
-                top_k = predictions[0].argsort()[-len(predictions[0]):][::-1]
-                
-                for node_id in top_k:
-                    human_string = label_lines[node_id]
-                    if human_string == "strobe":
-                        score = predictions[0][node_id]
-                        #print('%s (score = %.5f)' % (human_string, score))
-                
-            if score>0.85:
+                if count%5 == 0:  # processes on frames after every 0.2 seconds
+                    predictions = sess.run(softmax_tensor, \
+                            {'DecodeJpeg/contents:0': byte_im})
+                    
+                    # Sort to show labels of first prediction in order of confidence
+                    top_k = predictions[0].argsort()[-len(predictions[0]):][::-1]
+                    
+                    for node_id in top_k:
+                        human_string = label_lines[node_id]
+                        if human_string == "strobe":
+                            score = predictions[0][node_id]
+                            #print('%s (score = %.5f)' % (human_string, score))
+                    
+                if score>0.93:
 
-                # converting to gray-scale
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-                #epilepsy[count] = score
+                    # converting to gray-scale
+                    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                    #epilepsy[count] = score
 
 
-            count+=1
-        
-            # displaying the video
-            cv2.imshow("Live", frame)
+                count+=1
+            
+                # displaying the video
+                cv2.imshow("Live", frame)
 
-            #saving as a new video
-            out.write(frame)
-        
-            # exiting the loop
-            key = cv2.waitKey(1)
-            if key == ord("q"):
-                break
+                #saving as a new video
+                out.write(frame)
+            
+                # exiting the loop
+                key = cv2.waitKey(1)
+                if key == ord("q"):
+                    break
             
     # closing the window
     cv2.destroyAllWindows()
