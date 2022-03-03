@@ -1,6 +1,7 @@
 import streamlit as st
 from utils.deployment import *
 import cv2
+from utils.video import *
 
 set_bg_local("misc/images/bg.jpg")
 opt = st.sidebar.selectbox("",("Home", "Transform"))
@@ -29,8 +30,13 @@ if opt=="Home":
         st.image("https://media.istockphoto.com/videos/rainbow-gay-flag-animation-on-white-background-video-id1173187170?s=256x256")
 
 else:
-    video_upload()
-    
+
+    if video_upload():
+        st.info("Your video has been Uploaded!")
+
+        if st.button("Start Processing"):
+            run()
+            #st.video("misc/test/new video.avi")
 
 
 
