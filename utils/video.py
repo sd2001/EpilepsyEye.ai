@@ -5,15 +5,10 @@ tf.disable_v2_behavior()
 def run():
     vidcap = cv2.VideoCapture('misc/test/test.mp4')
 
-    #fps = vidcap.get(cv2.CAP_PROP_FPS)
-    #print(fps)
-    #success,image = vidcap.read()
-
     count = 0
     success = True
-
-    #epilepsy = {}
-
+    
+    # Define the location for saving the preprocessed video
     new_vid = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter('misc/test/new video.avi', new_vid, 20.0, (640,480))
 
@@ -67,9 +62,7 @@ def run():
                 if key == ord("q"):
                     break
             
-    # closing the window
+    # Close all windows
     cv2.destroyAllWindows()
     out.release()
     vidcap.release()
-        
-    #print(epilepsy)
