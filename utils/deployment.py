@@ -42,18 +42,26 @@ def video_upload():
                 # close file
                 out.close()
 
+                return True
+
         elif opt == 'Upload video via link':
             
             try:
                 link = st.text_input('Enter the youtube URL')
                 yt_download(link,temporary_location)
 
+                return True
+
             except:
                 st.error("")
+                return False
+
 
     except:
 
-         st.info("Please upload your video in '.mp4' format")
+        st.info("Please upload your video in '.mp4' format")
+        return False
+    
 
 def set_bg_local(main_bg):
 
