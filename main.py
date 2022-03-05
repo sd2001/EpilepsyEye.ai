@@ -37,10 +37,6 @@ try:
 
 			if st.button("Start Processing"):
 				run()
-				#st.video("misc/test/new video.avi")
+
 except Exception as e:
     pass
-
-
-
- 

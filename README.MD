@@ -8,12 +8,10 @@
    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg" />
 	<br>
 </div>
-	
-
-
-## Detect seizure inducing videos using Tensorflow - Background on Epilepsy
-
-<br><img src="media/effects.png" /><br>
+<br>
+<div align='center'>
+<img src="https://img.shields.io/badge/Brief%20Background%20on%20Epilepsy%20and%20its%20Effects-rebeccapurple?style=for-the-badge" height="45"/>
+</div>
 
 <br><img src="media/effects.png" /><br>
 
@@ -26,7 +24,7 @@ It is important for sites with user generated content to acknowledge this and ta
 <div align="center">
   </p>
   <p>
-  <img src="https://img.shields.io/badge/Vision%20%7C%20No one deserves a seizure from social media.-purple?logo=Product%20Hunt&style=for-the-badge" height="40"/>
+  <img src="https://img.shields.io/badge/Vision%20%7C%20No one deserves a seizure from social media.-mistyrose?logo=Product%20Hunt&style=for-the-badge" height="40"/>
   <br><br>
   <img src="media/product_vision.png" />
   </p>
@@ -223,3 +221,4 @@ Credits
 * [Google Code Labs - TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets)
 * [Build a TensorFlow Image Classifier in 5 Min](https://youtu.be/QfNvhPx5Px8)
 * [Smashing Security Podcast coverage of tweet incident](http://smashingsecurity.libsyn.com/013-assault-with-a-deadly-tweet)
+* [Github Reference Repo](https://github.com/asasidh/Seizure-Detection-Tensor-Flow)
